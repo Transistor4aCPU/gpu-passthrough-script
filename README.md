@@ -20,9 +20,10 @@ lspci -nnv
 
 
 
+
 Troubleshooting notes:
 
-You can't use your initialising GPU for passthrough.
+You can't use the initialising GPU for passthrough.
 
 You need at least 2 graphics cards.
 
