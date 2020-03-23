@@ -4,11 +4,23 @@ It automatically configures IOMMU in grub and isolates the GPU choosen for passt
 
 After following the following steps your GPU should be isolated and ready for GPU passthrough
 ```
+# Install git to clone the GPU passthrough scripts
+sudo apt-get install git
+
+# Clone the GPU passthrough scripts
+git clone https://github.com/Transistor4aCPU/gpu-passthrough-script.git
+
+# Open the gpu-passthrough-script folder
+cd gpu-passthrough-script/
+
 # Configure IOMMU in Grub
 sudo bash grub-iommu-conf.sh
 ```
 After reboot
 ```
+# Open the gpu-passthrough-script folder
+cd gpu-passthrough-script/
+
 # Configure GPU passthrough
 sudo bash gpu-passthrough-script.sh
 ```
