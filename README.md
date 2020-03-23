@@ -18,9 +18,6 @@ After reboot
 lspci -nnv
 ```
 
-
-
-
 Troubleshooting notes:
 
 You can't use the initialising GPU for passthrough.
