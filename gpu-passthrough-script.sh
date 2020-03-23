@@ -13,6 +13,8 @@ if [ "lspci -nn | grep "VGA compatible controller" | wc -l" =< "1" ]
 	else
 		echo "you have enough gpus"
 fi
+
+#Show IOMMU groups
 shopt -s nullglob
 for d in /sys/kernel/iommu_groups/*/devices/*; do
     n=${d#*/iommu_groups/*}; n=${n%%/*}
@@ -23,6 +25,7 @@ echo "Is your GPU and the gpu audio controller you want to passthrough alone in 
 read iommu
 if [ "$iommu" == "Y" ]
 	then
+		# List GPUs
 		echo "Choose the gpu you want passthrough"
 		lspci -nn | grep "VGA compatible controller" | cat -b
 		read gpu
@@ -66,6 +69,8 @@ if [ "$iommu" == "Y" ]
 		echo "You can install the acso patch, which creates an own IOMMU group for all configured devices"
 	exit
 fi
+
+# Configure files for gpu passthrough
 echo "vfio vfio_iommu_type1 vfio_virqfd vfio_pci ids=$pgpu,$actrl" >> /etc/initramfs-tools/modules
 echo "vfio vfio_iommu_type1 vfio_pci ids=$pgpu,$actrl" >> /etc/modules
 echo "softdep nouveau pre: vfio-pci" > /etc/modprobe.d/nvidia.conf
