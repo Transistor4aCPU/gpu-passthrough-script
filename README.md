@@ -17,6 +17,9 @@ After reboot
 # Check that the passthrough gpu use the vfio driver
 lspci -nnv
 ```
+
+
+
 Troubleshooting notes:
 
 You can't use your initialising GPU for passthrough.
