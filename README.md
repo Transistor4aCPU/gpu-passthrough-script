@@ -32,6 +32,15 @@ lspci -nnv
 
 Troubleshooting notes:
 
+Use verbose mode
+```
+# Configure IOMMU in Grub with verbose mode
+sudo bash grub-iommu-conf.sh -v
+
+# Configure GPU passthrough with verbose mode
+sudo bash gpu-passthrough-script.sh -v
+```
+
 You can't use the initialising GPU for passthrough.
 
 You need at least 2 graphics cards.
