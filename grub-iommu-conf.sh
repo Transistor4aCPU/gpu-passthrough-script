@@ -49,7 +49,7 @@ if [ "$grub" == "1" ]
 				then
 					apt-get -y install nano
 					echo "Add "amd_iommu=on iommu=pt kvm_amd.npt=1 kvm_amd.avic=1" to GRUB_CMDLINE_LINUX_Default"
-					echo "Press "Y" if have you copied what you should add"
+					echo "Press "Y" if you have copied what you should add"
 					read grubdefault
 					if [ "$grubdefault" == "Y" ]
 						then
@@ -60,7 +60,7 @@ if [ "$grub" == "1" ]
 					then
 						apt-get -y install nano
 						echo "Add "intel_iommu=on" to GRUB_CMDLINE_LINUX_Default"
-						echo "Press "Y" if have you copied what you should add"
+						echo "Press "Y" if you have copied what you should add"
                                         	read grubdefault
                                         	if [ "$grubdefault" == "Y" ]
                                                 	then
@@ -83,5 +83,3 @@ if [ "$reboot" == "Y" ]
 	else
 		exit
 fi
-
-
