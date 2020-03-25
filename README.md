@@ -14,7 +14,7 @@ git clone https://github.com/Transistor4aCPU/gpu-passthrough-script.git
 cd gpu-passthrough-script/
 
 # Configure IOMMU in Grub
-sudo bash grub-iommu-conf.sh # Use sudo bash GUI-Grub-IOMMU-conf.sh if you are on KDE and want to use a GUI
+sudo bash grub-iommu-conf.sh # Use sudo bash gui-grub-iommu-conf.sh if you are on KDE and want to use a GUI
 ```
 After reboot
 ```
