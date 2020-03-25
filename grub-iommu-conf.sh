@@ -1,4 +1,16 @@
 #!/bin/bash
+# Getopts
+unset VERBOSE
+while getopts 'v' c
+do
+  case $c in
+    v) VERBOSE=true ;;
+  esac
+done
+if [ $VERBOSE ]; then
+  set -x
+fi
+
 # Check that the script is running with root permissions
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
