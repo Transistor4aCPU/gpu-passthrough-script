@@ -18,12 +18,9 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Check that the system is booted in UEFI mode
-if [ "[ -d /sys/firmware/efi ] && echo UEFI || echo BIOS | grep -c UEFI" == "0" ]
-	then
-		echo "You have to boot with UEFI"
-		exit
+if [ -d /sys/firmware/efi ]
+        else echo "You have to boot with UEFI"
 fi
-
 # Check cpu vendor
 if [ "cat /proc/cpuinfo | grep -c AuthenticAMD" > "0" ]
 	then cpuvendor=AMD
