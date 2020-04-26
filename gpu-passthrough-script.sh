@@ -18,7 +18,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Check number of gpus
-if [ "lspci -nn | grep "VGA compatible controller" | wc -l" =< "1" ]
+if [ "$(lspci -nn | grep VGA | wc -l)" -lt 2 ]
 	then
 		echo "You need at least 2 gpus"
 		exit
