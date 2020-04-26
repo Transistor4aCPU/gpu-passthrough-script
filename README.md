@@ -1,4 +1,10 @@
 # GPU passthrough script
+!!!This is an old version!!!
+The newer and better version is at https://github.com/Transistor4aCPU/gpu-passthrough-tools
+#
+#
+#
+#
 An interactive script that configures gpu passthrough on debian/ubuntu based linux systems.
 It automatically configures IOMMU in grub and isolates the GPU choosen for passthrough.
 
